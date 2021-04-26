@@ -2113,7 +2113,7 @@ SearchWorker::NodeToProcess SearchWorker::PickNodeToExtend(
       const float Q = child.GetQ(fpu, draw_score);
       const float M = m_evaluator.GetM(child, Q);
 
-      const float score = child.GetU(puct_mult) + Q + M;
+      const float score = 1/visits;
       if (score > best) {
         second_best = best;
         second_best_edge = best_edge;
